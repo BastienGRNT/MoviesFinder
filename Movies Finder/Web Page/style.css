@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7CB46;
+}
+
+header {
+    background-color: #f58ddf;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #000;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px;
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.left {
+    align-items: flex-start;
+    width: 40%;
+}
+
+.right {
+    align-items: flex-start ;
+    width: 40%;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.search-box-inline {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 3px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn-valider {
+    background-color: #F7CB46;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.btn-valider:hover {
+    background-color: #ff7a01;
+}
+
+/* Style de la section des films */
+.film-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Style de chaque carte de film */
+.movie {
+    background-color: #fef6e4;
+    border: 1px solid #ffd60a;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie h3 {
+    color: #001858;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.movie p {
+    color: #172c66;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 5px 10px;
+}
+
+/* Effet au survol */
+.movie:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
