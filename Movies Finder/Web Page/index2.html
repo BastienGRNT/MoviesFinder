@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Entre ton film</title>
+</head>
+
+<body>
+<header>
+    <h1>Entre ton film !</h1>
+    <div class="search-container">
+        <!-- Section Titre et Genre (Gauche) -->
+        <div class="search-group left">
+            <div class="search-box">
+                <label for="titre"></label>
+                <input class="input" type="text" id="titre" placeholder="Titre">
+            </div>
+            <div class="search-box">
+                <label for="genre"></label>
+                <select class="input" id="genre">
+                    <option value="">Sélectionne un genre</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Western">Western</option>
+                </select>
+            </div>
+        </div>
+        <!-- Section Acteur, Durée et Valider (Droite) -->
+        <div class="search-group right">
+            <div class="search-box">
+                <label for="acteur_principal"></label>
+                <input class="input" type="text" id="acteur_principal" placeholder="Acteur.trice principal.e">
+            </div>
+            <div class="search-box-inline">
+                <label for="duree"></label>
+                <select class="input" id="duree">
+                    <option value="">Sélectionne une durée</option>
+                    <option value="60">< 1h</option>
+                    <option value="90">< 1h30</option>
+                    <option value="120">< 2h</option>
+                    <option value="180">< 3h</option>
+                    <option value="240">< 4h</option>
+                </select>
+                <button class="btn-valider" id="boutonV">Validée</button>
+                <a href="index.html">
+                    <button class="btn-plus" id="boutonplus">🔎</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div id="responseMessage"></div>
+</main>
+</body>
+<script src="script2.js"></script>
+</html>

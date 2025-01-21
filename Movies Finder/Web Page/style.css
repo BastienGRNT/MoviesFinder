@@ -85,7 +85,24 @@ label {
     margin-left: 10px;
 }
 
+
 .btn-valider:hover {
+    background-color: #ff7a01;
+}
+
+.btn-plus {
+    background-color: #F7CB46;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.btn-plus:hover {
     background-color: #ff7a01;
 }
 
