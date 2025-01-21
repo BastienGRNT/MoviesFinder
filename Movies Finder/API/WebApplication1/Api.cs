@@ -9,15 +9,15 @@ namespace WebApplication1;
 public class FilmAPI : ControllerBase
 {
     [HttpPost]
-    public IActionResult AvoirFilm([FromBody] Film film)
+    public IActionResult AvoirFilm([FromBody] Film data)
     {
         
-        if (film == null)
+        if (data == null)
         {
             return BadRequest("Le titre recherché est obligatoire.");
         }
 
-        var filmes = FonctionMetier.RecherFilm(film);
+        var filmes = FonctionMetier.RecherFilm(data);
 
         return Ok(filmes);
     }

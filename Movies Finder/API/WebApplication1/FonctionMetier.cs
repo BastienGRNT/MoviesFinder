@@ -8,7 +8,6 @@ public class FonctionMetier
 {
     public static List<Film> RecherFilm(Film film)
     {
-        Console.WriteLine("COUCOU");
 
         var filmT = new List<Film>();
 
