@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication2;
+using WebApplication1;
 
 namespace WebApplication1;
 
@@ -7,7 +9,7 @@ namespace WebApplication1;
 public class AddFilmApi : ControllerBase
 {
     [HttpPost]
-    public IActionResult AddFilm([FromBody] AddFilmApi data)
+    public IActionResult AddFilm([FromBody] Film data)
     {
         if (data == null)
         {

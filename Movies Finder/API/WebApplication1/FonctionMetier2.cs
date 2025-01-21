@@ -10,28 +10,26 @@ public class FonctionMetier2
     {
         using (var connection = Sql.GetConnection())
         {
-            if (connection.State == System.Data.ConnectionState.Closed)
+            if (connection.State != System.Data.ConnectionState.Open)
             {
                 connection.Open();
             }
-        }
 
-        string query = @"INSERT INTO movie (title, lead_actor, genre, duration_minutes)
-                        VALUES @title, @lead_actor, @genre, @duration_minutes";
-        
-        using (var command = new NpgsqlCommand(query))
-        {
-            command.Parameters.AddWithValue("@title", data.title ?? "Titre inconnu");
-            command.Parameters.AddWithValue("@lead_actor", data.lead_actor);
-            command.Parameters.AddWithValue("@genre", data.genre);
-            command.Parameters.AddWithValue("@duration_minutes", 
-                int.TryParse(data.duration_minutes, out var duration) ? duration : (object)DBNull.Value);
+            string query = @"INSERT INTO movies (title, lead_actor, genre, duration_minutes) 
+                         VALUES (@title, @lead_actor, @genre, @duration_minutes);";
 
-            // Exécute la commande
-            int rowsAffected = command.ExecuteNonQuery();
+            using (var command = new NpgsqlCommand(query, connection)) 
+            {
+                command.Parameters.AddWithValue("@title", data.title ?? "Titre inconnu");
+                command.Parameters.AddWithValue("@lead_actor", data.lead_actor);
+                command.Parameters.AddWithValue("@genre", data.genre);
+                command.Parameters.AddWithValue("@duration_minutes", 
+                    int.TryParse(data.duration_minutes, out var duration) ? duration : (object)DBNull.Value);
 
-            // Retourne vrai si une ligne a été insérée
-            return rowsAffected > 0;
+                int rowsAffected = command.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
         }
     }
 }
